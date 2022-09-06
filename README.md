@@ -63,3 +63,12 @@
 - plugin-config 文件夹： 是对第三方插件的配置，未来每添加一个插件，这里就多一个配置文件。
 - utils 文件夹： 是对常见问题的修改，包括输入法切换，针对 windows 的特殊配置等。
 
+
+## 配置入口文件:
+ *~/.config/nvim/init.lua*
+
+~~~lua
+-- 基础设置
+require('basic')
+~~~
+
