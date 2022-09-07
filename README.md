@@ -84,3 +84,11 @@ require 函数在 Lua 中用于加载一个模块，而这些模块通常位于 
 - vim.bo.{option}: buffer-local 选项
 - vim.wo.{option}: window-local 选项
 
+
+## 模糊搜索文件并快速打开
+ telescope 依赖一下项目
+ - [BurntSushi/ripgrep](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FBurntSushi%2Fripgrep)
+- [sharkdp/fd](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fsharkdp%2Ffd)
+
+再次运行 `:checkhealth telescope`，如图，依赖都已经安装完成：
+
