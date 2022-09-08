@@ -92,3 +92,75 @@ require 函数在 Lua 中用于加载一个模块，而这些模块通常位于 
 
 再次运行 `:checkhealth telescope`，如图，依赖都已经安装完成：
 
+
+
+
+
+## 开启 Neovim 内置 LSP
+
+通过命令 `:h lsp` 查看 LSP 文档的 QUICKSTART 部分写了 4 步：
+
+1. 安装 nvim-lspconfig
+2. 安装对应 language server
+3. 配置对应语言 require('lspconfig').xx.setup{…}
+4. :lua print(vim.inspect(vim.lsp.buf_get_clients())) 查看 LSP 连接状态
+
+首先第一步就是要配置客户端，之所以要安装 [nvim-lspconfig](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fneovim%2Fnvim-lspconfig) ，是因为 `nvim-lspconfig` 提供了一堆常见服务的配置方式。
+
+第二步就是安装语言服务器，比如要安装 TypeScript Language Server，就可以到对应的 [主页](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Ftypescript-language-server%2Ftypescript-language-server)上查找安装方式，发现可以用 npm 命令 `npm install -g typescript-language-server` 进行安装。
+
+值得庆幸的是，现在有了 [nvim-lsp-installer](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fwilliamboman%2Fnvim-lsp-installer) 项目，可以帮助我们管理，并自动安装 Language Server。
+
+所以我们把这两个插件一并安装起来，打开 `lua/plugins.lua` 添加 `nvim-lspconfig` 和 `nvim-lsp-installer` 组件。
+
+~~~
+    --------------------- LSP --------------------
+    use("williamboman/nvim-lsp-installer")
+    -- Lspconfig
+    use({ "neovim/nvim-lspconfig" })
+
+
+...略
+~~~
+
+
+
+golang支持
+
+```shel
+go install mvdan.cc/gofumpt@latest
+go get -u -v github.com/ofabry/go-callvis
+go get -u -v github.com/google/gops
+go get -u -v github.com/mdempsky/gocode
+go get -u -v golang.org/x/tools/gopls
+go get -u -v github.com/uudashr/gopkgs/v2/cmd/gopkgs
+go get -u -v github.com/ramya-rao-a/go-outline
+go get -u -v github.com/acroca/go-symbols
+go get -u -v golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/go-delve/delve/cmd/dlv
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/sqs/goreturns
+go get -u -v golang.org/x/lint/golint
+go get -u -v github.com/cweill/gotests/...
+go get -u -v github.com/fatih/gomodifytags
+go get -u -v github.com/josharian/impl
+go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct
+go get -u -v github.com/haya14busa/goplay/cmd/goplay
+go get -u -v github.com/godoctor/godoctor
+go get -u -v github.com/smartystreets/goconvey  
+go get -u -v github.com/jstemmer/gotags
+go get -u -v golang.org/x/tools/cmd/goimports 
+go get -u -v golang.org/x/tools/cmd/godoc
+go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint
+go get -u -v github.com/xxjwxc/gormt@master （gormt -g=true）
+go get -u -v google.golang.org/protobuf/cmd/protoc-gen-go 
+go get -u -v google.golang.org/grpc/cmd/protoc-gen-go-grpc
+go get -u -v github.com/envoyproxy/protoc-gen-validate
+go install mvdan.cc/gofumpt@latest
+
+
+
+brew install golangci-lint
+```
+
