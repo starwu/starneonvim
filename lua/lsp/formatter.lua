@@ -46,10 +46,10 @@ formatter.setup({
 -- format on save
 vim.api.nvim_exec(
   [[
-augroup FormatAutogroup
+  augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
-augroup END
+  augroup END
 ]],
   true
 )

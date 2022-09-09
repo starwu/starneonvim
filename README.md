@@ -92,6 +92,11 @@ require 函数在 Lua 中用于加载一个模块，而这些模块通常位于 
 
 再次运行 `:checkhealth telescope`，如图，依赖都已经安装完成：
 
+~~~shell
+brew install ripgrep
+brew install fd
+~~~
+
 
 
 
@@ -163,4 +168,16 @@ go install mvdan.cc/gofumpt@latest
 
 brew install golangci-lint
 ```
+
+
+
+
+
+## 快捷键
+
+| 按键            | 功能描述          | 备注                                                         |
+| --------------- | ----------------- | ------------------------------------------------------------ |
+| =               | 手动代码块缩进    | 文件进行缩进gg=G                                             |
+| zc / zo         | 代码折叠/展开功能 | 一对功能                                                     |
+| <CR>/<BS>/<TAB> | 增量选择模块      | 通过不断的按 Enter 选择区域会从里层不断外扩,<br /> Backspace 则相反不断内收。 |
 

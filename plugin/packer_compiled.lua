@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/starwu/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/starwu/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/starwu/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
