@@ -108,10 +108,6 @@ map("n", "st", ":sp | terminal<CR>", opt)
 map("n", "stv", ":vsp | terminal<CR>", opt)
 -- Esc 回 Normal 模式
 map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
 map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
@@ -129,7 +125,8 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-  { key = "<CR>", action = "system_open" },
+  -- { key = "<CR>", action = "system_open" },
+  { key = "<CR>", action = "edit" },
   -- v分屏打开文件
   { key = "v", action = "vsplit" },
   -- h分屏打开文件
@@ -211,8 +208,8 @@ pluginKeys.comment = {
   },
 }
 -- ctrl + /
-map("n", "<C-_>", "gcc", { noremap = false })
-map("v", "<C-_>", "gcc", { noremap = false })
+map("n", "<C-/>", "gcc", { noremap = false })
+map("v", "<C-/>", "gbc", { noremap = false })
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
