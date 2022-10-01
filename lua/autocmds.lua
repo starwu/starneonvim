@@ -37,7 +37,7 @@ autocmd("TermOpen", {
 autocmd("BufWritePre", {
   group = myAutoGroup,
   pattern = { "*.lua", "*.py", "*.sh" },
-  callback = vim.lsp.buf.formatting_sync,
+   callback = vim.lsp.buf.formatting_sync,
 })
 
 -- 重新打开缓冲区恢复光标位置：
